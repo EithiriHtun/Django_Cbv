@@ -1,0 +1,18 @@
+{% extends "CbvApp/basic_app_base.html" %}
+{% block body_block %}
+  <div class="jumbotron">
+
+    <h1>Welcome to the List of Schools Page!</h1>
+      <ol>
+        {% for school in school_list %}
+          <h2><li><a href="(%3FP{{school.id}}%5Cd+)/">{{school.name}} </a>
+          <a class='btn btn-warning' href="{% url 'CbvApp:update' pk=school.pk %}">Update</a>
+          <a class='btn btn-warning' href="{% url 'CbvApp:delete' pk=school.pk %}">Delete</a>
+          </li></h2>
+        {% endfor %}
+      </ol>
+
+  </div>
+
+
+{% endblock %}
