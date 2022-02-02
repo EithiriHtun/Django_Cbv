@@ -20,5 +20,6 @@ from CbvApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index',views.index),
-    path('',views.CBView.as_view())
+    path('cbv',views.CBView.as_view()),
+     path('',views.IndexView.as_view())
 ]
